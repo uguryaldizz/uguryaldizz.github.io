@@ -1,0 +1,2142 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kultursensible Pflegeberatung und Alltagshilfe Rose</title>
+    <meta name="description" content="Wir begleiten Sie und Ihre Angehörigen mit Herz, Erfahrung und persönlicher Beratung – für ein selbstbestimmtes Leben im Alltag.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Great+Vibes&family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --burgundy: #831A29;
+            --burgundy-dark: #651321;
+            --bg-main: #FAF8F5;
+            --bg-secondary: #F2EAE6;
+            --text-main: #242424;
+            --text-secondary: #66636A;
+            --white: #FFFFFF;
+            --whatsapp: #25D366;
+            --whatsapp-dark: #1EBE5A;
+            --rose-accent: #D8A5A3;
+            --divider: #E6DDD8;
+            --shadow-soft: 0 10px 30px rgba(36, 36, 36, 0.06);
+            --shadow-hover: 0 14px 36px rgba(131, 26, 41, 0.12);
+            --radius-card: 12px;
+            --radius-pill: 50px;
+            --root-font-size: 16px;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        html {
+            font-size: var(--root-font-size);
+            scroll-behavior: smooth;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', Georgia, serif;
+            color: var(--text-main);
+            font-weight: 600;
+        }
+
+        a, button, input, select, textarea { font-family: inherit; }
+
+        :focus-visible {
+            outline: 3px solid var(--burgundy);
+            outline-offset: 3px;
+        }
+
+        /* HEADER & NAVIGATION */
+        .site-header {
+            background-color: var(--white);
+            border-bottom: 1px solid rgba(216, 165, 163, 0.25);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 0.85rem 4%;
+        }
+
+        .header-container {
+            max-width: 1320px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.25rem;
+        }
+
+        .brand-identity {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.9rem;
+            text-decoration: none;
+            color: var(--text-main);
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+
+        .brand-logo-img {
+            height: 66px;
+            width: auto;
+            object-fit: contain;
+            display: block;
+        }
+
+        .brand-emblem-lockup {
+            display: flex;
+            align-items: center;
+            gap: 0.85rem;
+        }
+
+        .brand-emblem-svg { width: 62px; height: 62px; flex-shrink: 0; }
+
+        .brand-lockup-text {
+            display: flex;
+            flex-direction: column;
+            font-family: 'Cormorant Garamond', 'Playfair Display', serif;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            line-height: 1.25;
+            color: var(--text-main);
+            font-weight: 700;
+            font-size: 0.82rem;
+        }
+
+        .main-nav ul {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            gap: 2.2rem;
+        }
+
+        .nav-link {
+            background: none;
+            border: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text-main);
+            padding: 0.4rem 0;
+            position: relative;
+            cursor: pointer;
+            transition: color 0.2s ease;
+        }
+
+        .nav-link:hover, .nav-link.active { color: var(--burgundy); }
+
+        .nav-link.active::after {
+            content: "";
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--burgundy);
+            border-radius: 2px;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        /* Elderly Zoom Widget */
+        .zoom-widget {
+            display: inline-flex;
+            align-items: center;
+            background-color: var(--bg-main);
+            border: 1px solid var(--divider);
+            border-radius: var(--radius-pill);
+            padding: 0.2rem 0.35rem;
+            gap: 0.15rem;
+        }
+
+        .zoom-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-main);
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 0.28rem 0.5rem;
+            border-radius: var(--radius-pill);
+            cursor: pointer;
+            transition: background-color 0.2s, color 0.2s;
+        }
+
+        .zoom-btn:hover {
+            background-color: var(--bg-secondary);
+            color: var(--burgundy);
+        }
+
+        .zoom-level-indicator {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            padding: 0 0.25rem;
+            font-weight: 500;
+            min-width: 38px;
+            text-align: center;
+        }
+
+        /* DE / TR Language Selector */
+        .lang-pill-select {
+            display: inline-flex;
+            align-items: center;
+            background-color: var(--bg-main);
+            border: 1px solid var(--divider);
+            border-radius: var(--radius-pill);
+            padding: 0.2rem;
+        }
+
+        .lang-option-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            border: none;
+            background: transparent;
+            padding: 0.3rem 0.65rem;
+            border-radius: var(--radius-pill);
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .lang-option-btn.active {
+            background-color: var(--white);
+            color: var(--text-main);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+        }
+
+        .flag-circle {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            display: inline-block;
+            flex-shrink: 0;
+        }
+
+        .btn-burgundy {
+            background-color: var(--burgundy);
+            color: var(--white);
+            text-decoration: none;
+            padding: 0.72rem 1.45rem;
+            border-radius: var(--radius-pill);
+            font-size: 0.92rem;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.55rem;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
+            box-shadow: 0 4px 14px rgba(131, 26, 41, 0.18);
+        }
+
+        .btn-burgundy:hover {
+            background-color: var(--burgundy-dark);
+            transform: translateY(-1px);
+            box-shadow: 0 6px 18px rgba(131, 26, 41, 0.26);
+        }
+
+        .btn-burgundy:disabled {
+            opacity: 0.65;
+            cursor: wait;
+        }
+
+        .btn-whatsapp-outline {
+            background-color: var(--white);
+            color: var(--whatsapp);
+            border: 2px solid var(--whatsapp);
+            text-decoration: none;
+            padding: 0.65rem 1.45rem;
+            border-radius: var(--radius-pill);
+            font-size: 0.92rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.55rem;
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+
+        .btn-whatsapp-outline:hover {
+            background-color: var(--whatsapp);
+            color: var(--white);
+        }
+
+        .btn-burgundy svg, .btn-white-pill svg, .btn-whatsapp-outline svg {
+            width: 17px;
+            height: 17px;
+            stroke: currentColor;
+            stroke-width: 1.8;
+            fill: none;
+            flex-shrink: 0;
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: var(--bg-main);
+            border: 1px solid var(--divider);
+            border-radius: 8px;
+            padding: 0.5rem 0.65rem;
+            cursor: pointer;
+            color: var(--text-main);
+        }
+
+        /* PAGE VIEWS */
+        .page-view { display: none; animation: pageFade 0.3s ease; }
+        .page-view.active { display: block; }
+        @keyframes pageFade { from { opacity: 0; } to { opacity: 1; } }
+
+        /* ==========================================
+           HOMEPAGE: 1. HERO SECTION
+           ========================================== */
+        .hero-section {
+            position: relative;
+            background-color: var(--bg-main);
+            overflow: hidden;
+            border-bottom: 1px solid var(--divider);
+        }
+
+        .hero-grid {
+            max-width: 1380px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.05fr 1.15fr;
+            min-height: 540px;
+            align-items: stretch;
+        }
+
+        .hero-text-col {
+            padding: 4rem 2.5rem 4rem 6%;
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .eyebrow-text {
+            display: block;
+            font-size: 0.78rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2.4px;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .hero-headline {
+            font-size: 3.3rem;
+            line-height: 1.12;
+            color: var(--text-main);
+            margin-bottom: 1.35rem;
+            font-weight: 600;
+            letter-spacing: -0.3px;
+        }
+
+        .hero-supporting-text {
+            font-size: 1.06rem;
+            color: var(--text-secondary);
+            max-width: 500px;
+            line-height: 1.65;
+            margin-bottom: 2.5rem;
+        }
+
+        .hero-image-col {
+            position: relative;
+            min-height: 540px;
+            display: flex;
+        }
+
+        .hero-photo-wrapper {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            min-height: 540px;
+            overflow: hidden;
+        }
+
+        .hero-photo-wrapper img {
+            width: 100%;
+            height: 100%;
+            min-height: 540px;
+            object-fit: cover;
+            object-position: center 20%;
+            display: block;
+        }
+
+        .hero-photo-wrapper::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 30%;
+            height: 100%;
+            background: linear-gradient(to right, var(--bg-main) 0%, rgba(250, 248, 245, 0.7) 45%, rgba(250, 248, 245, 0) 100%);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .hero-handwritten-quote {
+            position: absolute;
+            right: 4%;
+            bottom: 4rem;
+            transform: rotate(-2deg);
+            z-index: 2;
+            background: rgba(250, 248, 245, 0.94);
+            backdrop-filter: blur(6px);
+            padding: 0.65rem 1.25rem;
+            border-radius: 12px;
+            font-family: 'Caveat', cursive;
+            font-size: 1.7rem;
+            line-height: 1.15;
+            color: var(--text-main);
+            text-align: center;
+            box-shadow: 0 6px 22px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(216, 165, 163, 0.35);
+        }
+
+        .handwritten-underline {
+            display: block;
+            width: 85%;
+            height: 6px;
+            margin: 0.2rem auto 0;
+        }
+
+        .botanical-rose-left {
+            position: absolute;
+            bottom: -15px;
+            left: -15px;
+            width: 165px;
+            height: 165px;
+            opacity: 0.35;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* ==========================================
+           HOMEPAGE: 2. SERVICES OVERVIEW
+           ========================================== */
+        .services-overview-section {
+            background-color: var(--bg-main);
+            padding: 3.2rem 4%;
+            border-bottom: 1px solid var(--divider);
+        }
+
+        .services-overview-grid {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        .service-overview-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.15rem;
+            padding: 0.75rem 1.75rem;
+            border-right: 1px solid var(--divider);
+            color: inherit;
+            cursor: pointer;
+            transition: transform 0.22s ease;
+        }
+
+        .service-overview-item:first-child { padding-left: 0; }
+        .service-overview-item:last-child { border-right: none; padding-right: 0; }
+        .service-overview-item:hover { transform: translateY(-3px); }
+        .service-overview-item:hover h3 { color: var(--burgundy); }
+
+        .service-icon-circle {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background-color: var(--bg-secondary);
+            color: var(--burgundy);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: background-color 0.25s ease, color 0.25s ease;
+        }
+
+        .service-overview-item:hover .service-icon-circle {
+            background-color: var(--burgundy);
+            color: var(--white);
+        }
+
+        .service-icon-circle svg {
+            width: 25px;
+            height: 25px;
+            stroke: currentColor;
+            stroke-width: 1.8;
+            fill: none;
+        }
+
+        .service-overview-text h3 {
+            font-size: 1.28rem;
+            margin-bottom: 0.35rem;
+            transition: color 0.2s ease;
+        }
+
+        .service-overview-text p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.55;
+        }
+
+        /* ==========================================
+           HOMEPAGE: 3. EDITORIAL ABOUT SECTION
+           ========================================== */
+        .editorial-about-section {
+            padding: 4.5rem 4%;
+            background-color: var(--bg-main);
+        }
+
+        .editorial-about-grid {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1.05fr 1fr;
+            gap: 2.8rem;
+            align-items: stretch;
+        }
+
+        .about-rose-card {
+            position: relative;
+            border-radius: var(--radius-card);
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+            min-height: 360px;
+            background-color: var(--bg-secondary);
+        }
+
+        .about-rose-card img {
+            width: 100%;
+            height: 100%;
+            min-height: 360px;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+        }
+
+        .about-rose-caption {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(250, 248, 245, 0.94);
+            backdrop-filter: blur(4px);
+            padding: 0.55rem 1.15rem;
+            border-radius: 10px;
+            font-family: 'Caveat', cursive;
+            font-size: 1.65rem;
+            line-height: 1.15;
+            color: var(--text-main);
+            transform: rotate(-2deg);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .about-center-col {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0.5rem 0;
+        }
+
+        .about-center-col h2 {
+            font-size: 2.3rem;
+            line-height: 1.18;
+            margin-bottom: 1.2rem;
+        }
+
+        .about-center-col p {
+            font-size: 0.98rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.85rem;
+            line-height: 1.7;
+        }
+
+        .about-trust-panel {
+            background-color: var(--bg-secondary);
+            border-radius: var(--radius-card);
+            padding: 2.2rem 2rem;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .trust-icon {
+            width: 38px;
+            height: 38px;
+            color: var(--burgundy);
+            flex-shrink: 0;
+            margin-top: 0.1rem;
+        }
+
+        .trust-icon svg {
+            width: 28px;
+            height: 28px;
+            stroke: currentColor;
+            stroke-width: 1.7;
+            fill: none;
+        }
+
+        .trust-item h4 { font-size: 1.12rem; margin-bottom: 0.2rem; }
+        .trust-item p { font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5; }
+
+        .botanical-rose-right {
+            position: absolute;
+            bottom: -18px;
+            right: -12px;
+            width: 145px;
+            height: 145px;
+            opacity: 0.32;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* ==========================================
+           HOMEPAGE: 4. CONTACT CTA BANNER
+           ========================================== */
+        .cta-banner-section {
+            padding: 0 4% 4.5rem;
+            background-color: var(--bg-main);
+        }
+
+        .cta-banner-box {
+            max-width: 1280px;
+            margin: 0 auto;
+            border-radius: var(--radius-card);
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            background-color: var(--burgundy);
+            box-shadow: var(--shadow-hover);
+            position: relative;
+            min-height: 200px;
+        }
+
+        .cta-left-content {
+            padding: 2.8rem 3rem;
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+            position: relative;
+            z-index: 2;
+            background: linear-gradient(110deg, var(--burgundy-dark) 0%, var(--burgundy) 88%, rgba(131, 26, 41, 0.92) 100%);
+        }
+
+        .cta-text-wrap h2 { color: var(--white); font-size: 2rem; margin-bottom: 0.45rem; }
+        .cta-text-wrap p { color: rgba(255, 255, 255, 0.88); font-size: 1rem; }
+
+        .btn-white-pill {
+            background-color: var(--white);
+            color: var(--burgundy);
+            padding: 0.8rem 1.65rem;
+            border-radius: var(--radius-pill);
+            font-size: 0.94rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            border: none;
+            cursor: pointer;
+            flex-shrink: 0;
+            transition: transform 0.2s ease, background-color 0.2s ease;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-white-pill:hover {
+            background-color: var(--bg-main);
+            transform: translateY(-2px);
+        }
+
+        .cta-right-photo { position: relative; min-height: 200px; overflow: hidden; }
+        .cta-right-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+        }
+
+        .cta-right-photo::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -2px;
+            width: 90px;
+            height: 100%;
+            background: linear-gradient(to right, var(--burgundy) 0%, rgba(131, 26, 41, 0) 100%);
+            z-index: 1;
+        }
+
+        /* ==========================================
+           SUBPAGES: LEISTUNGEN, ÜBER UNS, KONTAKT
+           ========================================== */
+        .subpage-header {
+            background-color: var(--bg-secondary);
+            padding: 4rem 4% 3.5rem;
+            border-bottom: 1px solid var(--divider);
+            text-align: center;
+        }
+
+        .subpage-header-inner { max-width: 780px; margin: 0 auto; }
+        .subpage-header h1 { font-size: 2.85rem; margin-bottom: 1rem; }
+        .subpage-header p { font-size: 1.06rem; color: var(--text-secondary); }
+
+        .subpage-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4.5rem 4%;
+        }
+
+        .detailed-services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2.2rem;
+        }
+
+        .detailed-service-card {
+            background-color: var(--white);
+            border: 1px solid var(--divider);
+            border-radius: var(--radius-card);
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+            display: flex;
+            flex-direction: column;
+            transition: box-shadow 0.25s ease, transform 0.25s ease;
+        }
+
+        .detailed-service-card:hover {
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-3px);
+        }
+
+        .dsc-image { height: 250px; overflow: hidden; background-color: var(--bg-secondary); }
+        .dsc-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+        .dsc-body {
+            padding: 2.2rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .dsc-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
+        .dsc-body h2 { font-size: 1.65rem; }
+        .dsc-desc { color: var(--text-secondary); font-size: 0.96rem; margin-bottom: 1.4rem; }
+
+        .dsc-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.65rem;
+            margin-bottom: 1.8rem;
+            padding-top: 1.1rem;
+            border-top: 1px solid var(--divider);
+        }
+
+        .dsc-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            font-size: 0.92rem;
+            color: var(--text-main);
+        }
+
+        .dsc-list li::before {
+            content: "•";
+            color: var(--burgundy);
+            font-weight: 700;
+            font-size: 1.2rem;
+            line-height: 1.2;
+        }
+
+        /* Über Uns Page */
+        .about-page-story {
+            display: grid;
+            grid-template-columns: 1.05fr 0.95fr;
+            gap: 3.5rem;
+            align-items: center;
+            margin-bottom: 4.5rem;
+        }
+
+        .about-page-text h2 { font-size: 2.2rem; margin-bottom: 1.2rem; line-height: 1.2; }
+        .about-page-text p { color: var(--text-secondary); font-size: 1rem; margin-bottom: 1.15rem; line-height: 1.75; }
+
+        .about-page-image {
+            border-radius: var(--radius-card);
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .about-page-image img {
+            width: 100%;
+            height: 420px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .pillars-4-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.8rem;
+        }
+
+        .pillar-box {
+            background-color: var(--white);
+            border: 1px solid var(--divider);
+            border-radius: var(--radius-card);
+            padding: 2rem;
+            display: flex;
+            gap: 1.2rem;
+            align-items: flex-start;
+        }
+
+        .pillar-box h3 { font-size: 1.3rem; margin-bottom: 0.45rem; }
+        .pillar-box p { font-size: 0.93rem; color: var(--text-secondary); }
+
+        /* Kontakt Page */
+        .contact-page-grid {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .contact-direct-card {
+            background-color: var(--bg-secondary);
+            border-radius: var(--radius-card);
+            padding: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .contact-direct-card h2 { font-size: 1.85rem; margin-bottom: 0.2rem; }
+        .contact-direct-card > p { color: var(--text-secondary); font-size: 0.96rem; margin-bottom: 0.5rem; }
+
+        .email-highlight-box {
+            background-color: var(--white);
+            border: 1px solid var(--divider);
+            border-radius: var(--radius-card);
+            padding: 1.4rem 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            text-decoration: none;
+            color: var(--text-main);
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .email-highlight-box:hover {
+            border-color: var(--burgundy);
+            box-shadow: var(--shadow-soft);
+        }
+
+        .email-highlight-box strong {
+            display: block;
+            font-size: 1.02rem;
+            color: var(--burgundy);
+            word-break: break-all;
+        }
+
+        .contact-form-card {
+            background-color: var(--white);
+            border: 1px solid var(--divider);
+            border-radius: var(--radius-card);
+            padding: 2.6rem;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .contact-form-card h2 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+        .contact-form-card > p { color: var(--text-secondary); font-size: 0.94rem; margin-bottom: 1.8rem; }
+
+        .form-field { margin-bottom: 1.25rem; }
+        .form-field label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-main);
+            margin-bottom: 0.45rem;
+        }
+
+        .form-field input, .form-field textarea {
+            width: 100%;
+            padding: 0.85rem 1rem;
+            border: 1px solid var(--divider);
+            border-radius: 8px;
+            background-color: var(--bg-main);
+            font-size: 0.96rem;
+            color: var(--text-main);
+            transition: border-color 0.2s, background-color 0.2s;
+        }
+
+        .form-field input:focus, .form-field textarea:focus {
+            border-color: var(--burgundy);
+            background-color: var(--white);
+            outline: none;
+        }
+
+        .form-field input.invalid, .form-field textarea.invalid {
+            border-color: #C92A2A;
+            background-color: #FFF5F5;
+        }
+
+        .field-error {
+            display: none;
+            color: #C92A2A;
+            font-size: 0.82rem;
+            margin-top: 0.35rem;
+        }
+
+        .form-status-box {
+            display: none;
+            padding: 1.1rem 1.25rem;
+            border-radius: 8px;
+            margin-bottom: 1.4rem;
+            font-size: 0.92rem;
+        }
+
+        .form-status-box.success {
+            display: block;
+            background-color: #F2F9F5;
+            border: 1px solid #A3D9B8;
+            color: #1E5631;
+        }
+
+        .form-status-box.error {
+            display: block;
+            background-color: #FFF5F5;
+            border: 1px solid #FFA8A8;
+            color: #C92A2A;
+        }
+
+        /* FLOATING ACTION WIDGET (SAĞ ALT - YENİ KONUM) */
+        .floating-action-widget {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 0.8rem;
+        }
+
+        .fab-btn {
+            text-decoration: none;
+            padding: 0.85rem 1.35rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.92rem;
+            display: flex;
+            align-items: center;
+            gap: 0.55rem;
+            color: var(--white);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .fab-whatsapp {
+            background-color: var(--whatsapp);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.35);
+        }
+
+        .fab-whatsapp:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.45);
+        }
+
+        .fab-email {
+            background-color: var(--burgundy);
+            box-shadow: 0 6px 20px rgba(131, 26, 41, 0.35);
+        }
+
+        .fab-email:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(131, 26, 41, 0.45);
+        }
+
+        .fab-btn svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+            stroke: currentColor;
+            stroke-width: 0.5;
+        }
+
+        /* FOOTER */
+        .site-footer {
+            background-color: var(--bg-main);
+            border-top: 1px solid var(--divider);
+            padding: 3rem 4% 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer-container { max-width: 1280px; margin: 0 auto; position: relative; z-index: 2; }
+
+        .footer-top-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 2rem;
+            padding-bottom: 2.2rem;
+            border-bottom: 1px solid var(--divider);
+        }
+
+        .footer-nav-links { display: flex; gap: 2rem; list-style: none; flex-wrap: wrap; }
+        .footer-nav-links button {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            font-size: 0.92rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+        .footer-nav-links button:hover { color: var(--burgundy); }
+
+        .footer-email-cta {
+            display: flex;
+            align-items: center;
+            gap: 0.9rem;
+            text-decoration: none;
+            color: var(--text-main);
+            padding-left: 2rem;
+            border-left: 1px solid var(--divider);
+        }
+
+        .footer-email-cta svg {
+            width: 28px;
+            height: 28px;
+            stroke: var(--burgundy);
+            stroke-width: 1.6;
+            fill: none;
+        }
+
+        .footer-email-cta strong { display: block; font-size: 0.95rem; font-weight: 600; color: var(--text-main); }
+        .footer-email-cta span { font-size: 0.82rem; color: var(--text-secondary); }
+
+        .footer-bottom-row {
+            padding-top: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+        }
+
+        .footer-legal-links { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+        .footer-legal-links button {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            font-size: 0.82rem;
+            cursor: pointer;
+        }
+        .footer-legal-links button:hover { color: var(--burgundy); text-decoration: underline; }
+
+        .footer-handwritten-quote {
+            font-family: 'Caveat', cursive;
+            font-size: 1.45rem;
+            color: var(--burgundy);
+            transform: rotate(-2deg);
+            margin-right: 3.5rem;
+        }
+
+        .botanical-footer-rose {
+            position: absolute;
+            bottom: -10px;
+            right: 15px;
+            width: 95px;
+            height: 95px;
+            opacity: 0.35;
+            pointer-events: none;
+        }
+
+        /* MODALS */
+        .modal-backdrop {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(36, 36, 36, 0.55);
+            backdrop-filter: blur(3px);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+        }
+        .modal-backdrop.open { display: flex; }
+        .modal-box {
+            background: var(--white);
+            border-radius: var(--radius-card);
+            max-width: 680px;
+            width: 100%;
+            max-height: 85vh;
+            overflow-y: auto;
+            padding: 2.5rem;
+            position: relative;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+        }
+        .modal-close {
+            position: absolute;
+            top: 1.25rem;
+            right: 1.25rem;
+            background: var(--bg-main);
+            border: 1px solid var(--divider);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 1080px) {
+            .hero-grid { grid-template-columns: 1fr; }
+            .hero-text-col { padding: 3rem 5%; text-align: center; }
+            .hero-photo-wrapper, .hero-photo-wrapper img, .hero-image-col { min-height: 420px; }
+            .hero-photo-wrapper::before {
+                width: 100%;
+                height: 80px;
+                background: linear-gradient(to bottom, var(--bg-main) 0%, rgba(250, 248, 245, 0) 100%);
+            }
+            .hero-handwritten-quote { bottom: 1.5rem; right: 1.5rem; }
+            .services-overview-grid { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+            .service-overview-item { border-right: none; padding: 0.5rem; }
+            .editorial-about-grid, .cta-banner-box { grid-template-columns: 1fr; }
+            .cta-left-content { flex-direction: column; text-align: center; }
+            .cta-right-photo::before { display: none; }
+        }
+
+        @media (max-width: 860px) {
+            .mobile-menu-toggle { display: inline-flex; }
+            .main-nav {
+                display: none;
+                width: 100%;
+                order: 4;
+                padding-top: 1rem;
+                border-bottom: 1px solid var(--divider);
+                margin-bottom: 1rem;
+            }
+            .main-nav.open { display: block; }
+            .main-nav ul { flex-direction: column; gap: 0.85rem; padding-bottom: 1rem;}
+            .header-container { flex-wrap: wrap; }
+            .detailed-services-grid, .about-page-story, .pillars-4-grid, .contact-page-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-email-cta { border-left: none; padding-left: 0; }
+        }
+
+        @media (max-width: 580px) {
+            .services-overview-grid { grid-template-columns: 1fr; }
+            .hero-headline { font-size: 2.3rem; }
+            .header-actions .btn-burgundy span { display: none; }
+            .header-actions .btn-burgundy { padding: 0.65rem 0.85rem; }
+            
+            /* Mobil görünümde sabit butonları yuvarlak ve kompakt yap */
+            .floating-action-widget { right: 15px; bottom: 15px; }
+            .fab-btn span { display: none; }
+            .fab-btn { padding: 1rem; border-radius: 50%; width: 54px; height: 54px; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sabit İletişim Butonları (SAĞ ALT KÖŞE) -->
+    <div class="floating-action-widget">
+        <a href="mailto:info@kulturpflege-rose.de" class="fab-btn fab-email" aria-label="E-Mail senden">
+            <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            <span data-i18n="fab_email">E-Mail senden</span>
+        </a>
+        <a href="https://wa.me/491785188399" target="_blank" rel="noopener" class="fab-btn fab-whatsapp" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+            <span data-i18n="fab_wa">WhatsApp Chat</span>
+        </a>
+    </div>
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="header-container">
+            <a class="brand-identity" onclick="navigateTo('startseite')" href="#startseite" aria-label="Kultursensible Pflegeberatung und Alltagshilfe Rose">
+                <img src="logo-rose.png" alt="Kultursensible Pflegeberatung und Alltagshilfe Rose Logo" class="brand-logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="brand-emblem-lockup" style="display:none;">
+                    <svg class="brand-emblem-svg" viewBox="0 0 120 125" fill="none">
+                        <path d="M32 98 A 50 50 0 1 1 88 98" stroke="#1A1A1A" stroke-width="2.3" stroke-linecap="round"/>
+                        <path d="M46 72 C 47 58, 50 48, 53 38" stroke="#3A4F28" stroke-width="2.2" stroke-linecap="round"/>
+                        <path d="M46 62 C 34 56, 30 43, 35 33 C 43 38, 47 48, 46 62 Z" fill="#4A5D32" stroke="#283618" stroke-width="1.2"/>
+                        <circle cx="53" cy="29" r="14" fill="#831A29"/>
+                        <path d="M43 26 C 46 18, 60 18, 63 26 C 66 34, 58 41, 53 41 C 46 41, 40 34, 43 26 Z" fill="#A51C24"/>
+                        <text x="45" y="71" font-family="'Cormorant Garamond', Georgia, serif" font-size="52" font-style="italic" font-weight="600" fill="#1A1A1A">K</text>
+                        <text x="60" y="116" text-anchor="middle" font-family="'Great Vibes', cursive" font-size="31" fill="#1A1A1A">Rose</text>
+                    </svg>
+                    <div class="brand-lockup-text">
+                        <span>KULTURSENSIBLE</span>
+                        <span>PFLEGEBERATUNG</span>
+                        <span>UND ALLTAGSHILFE</span>
+                    </div>
+                </div>
+            </a>
+
+            <button class="mobile-menu-toggle" onclick="toggleMobileNav()" aria-label="Menü">☰</button>
+
+            <nav class="main-nav" id="main-nav" aria-label="Hauptnavigation">
+                <ul>
+                    <li><button class="nav-link active" data-page="startseite" onclick="navigateTo('startseite')" data-i18n="nav_home">Startseite</button></li>
+                    <li><button class="nav-link" data-page="leistungen" onclick="navigateTo('leistungen')" data-i18n="nav_services">Leistungen</button></li>
+                    <li><button class="nav-link" data-page="ueber-uns" onclick="navigateTo('ueber-uns')" data-i18n="nav_about">Über uns</button></li>
+                    <li><button class="nav-link" data-page="kontakt" onclick="navigateTo('kontakt')" data-i18n="nav_contact">Kontakt</button></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <!-- Yaşlılar İçin Yakınlaştırma / Uzaklaştırma (A- / A+) -->
+                <div class="zoom-widget" role="group" aria-label="Schriftgröße anpassen">
+                    <button class="zoom-btn" onclick="adjustZoom(-1)" title="Uzaklaştır / Verkleinern">A−</button>
+                    <span class="zoom-level-indicator" id="zoom-indicator">100%</span>
+                    <button class="zoom-btn" onclick="adjustZoom(1)" title="Yakınlaştır / Vergrößern">A+</button>
+                </div>
+
+                <!-- DE / TR Dil Seçici -->
+                <div class="lang-pill-select" role="group" aria-label="Sprachauswahl">
+                    <button class="lang-option-btn active" data-lang="de" onclick="switchLanguage('de')">
+                        <svg class="flag-circle" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#DD0000"/><path d="M0 0h24v8H0z" fill="#000"/><path d="M0 16h24v8H0z" fill="#FFCE00"/></svg>
+                        DE
+                    </button>
+                    <button class="lang-option-btn" data-lang="tr" onclick="switchLanguage('tr')">
+                        <svg class="flag-circle" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#E30A17"/><circle cx="10.5" cy="12" r="5" fill="#FFF"/><circle cx="11.8" cy="12" r="4" fill="#E30A17"/></svg>
+                        TR
+                    </button>
+                </div>
+
+                <a href="tel:+491785188399" class="btn-burgundy">
+                    <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.58 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    <span>0178 5188399</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ==========================================
+         PAGE 1: STARTSEITE (ANA SAYFA)
+         ========================================== -->
+    <main id="page-startseite" class="page-view active">
+        <section class="hero-section">
+            <svg class="botanical-rose-left" viewBox="0 0 200 200" fill="none" stroke="#D8A5A3" stroke-width="1.5">
+                <circle cx="80" cy="110" r="42"/>
+                <path d="M55 95 C 70 75, 100 75, 110 100 C 115 125, 85 140, 65 125 C 50 110, 60 85, 80 85 C 95 85, 100 105, 85 115"/>
+                <path d="M80 152 L 80 198"/>
+            </svg>
+
+            <div class="hero-grid">
+                <div class="hero-text-col">
+                    <div class="hero-text-top">
+                        <span class="eyebrow-text" data-i18n="hero_eyebrow">VERTRAUEN · RESPEKT · MENSCHLICHKEIT</span>
+                        <h1 class="hero-headline" data-i18n="hero_headline">Kultursensible Pflegeberatung und Alltagshilfe</h1>
+                        <p class="hero-supporting-text" data-i18n="hero_subtext">
+                            Wir begleiten Sie und Ihre Angehörigen mit Herz, Erfahrung und persönlicher Beratung – für ein selbstbestimmtes Leben im Alltag.
+                        </p>
+                    </div>
+                    <div class="hero-cta-row">
+                        <button class="btn-burgundy" onclick="navigateTo('kontakt')">
+                            <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                            <span data-i18n="hero_btn">Jetzt Kontakt aufnehmen</span>
+                            <span aria-hidden="true">→</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- YENİ YAŞLI BAKIMI HERO RESMİ + BUTON İLE AYNI HİZAYA ALINMIŞ ETİKET -->
+                <div class="hero-image-col">
+                    <div class="hero-photo-wrapper">
+                        <!-- SICAK VE SAMİMİ YAŞLI BAKIMI FOTOĞRAFI -->
+                        <img src="main-bg.jpg" alt="Herzliche Pflegeberatung mit einer älteren Dame zu Hause">
+                        
+                        <!-- DÜZELTME: El yazısı etiket sol kısımdaki "İletişime Geçin" butonu ile aynı hizaya (sağ alt köşeye) indirildi. -->
+                        <div class="hero-handwritten-quote">
+                            <span data-i18n="hero_quote">„Ein gutes Leben kennt kein Alter.“</span>
+                            <svg class="handwritten-underline" viewBox="0 0 120 10" fill="none">
+                                <path d="M4 7 Q 60 1, 116 5" stroke="#831A29" stroke-width="2.2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4'lü Hizmet Özeti -->
+        <section class="services-overview-section">
+            <div class="services-overview-grid">
+                <div class="service-overview-item" onclick="navigateTo('leistungen')" role="button" tabindex="0">
+                    <div class="service-icon-circle">
+                        <svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                    </div>
+                    <div class="service-overview-text">
+                        <h3 data-i18n="srv_1_title">Beratung</h3>
+                        <p data-i18n="srv_1_short">Individuelle und kompetente Beratung zu allen Fragen rund um Pflege und Alltag.</p>
+                    </div>
+                </div>
+
+                <div class="service-overview-item" onclick="navigateTo('leistungen')" role="button" tabindex="0">
+                    <div class="service-icon-circle">
+                        <svg viewBox="0 0 24 24"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                    </div>
+                    <div class="service-overview-text">
+                        <h3 data-i18n="srv_2_title">Alltagshilfe</h3>
+                        <p data-i18n="srv_2_short">Unterstützung im Haushalt, bei Einkäufen und im täglichen Leben.</p>
+                    </div>
+                </div>
+
+                <div class="service-overview-item" onclick="navigateTo('leistungen')" role="button" tabindex="0">
+                    <div class="service-icon-circle">
+                        <svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </div>
+                    <div class="service-overview-text">
+                        <h3 data-i18n="srv_3_title">Begleitung</h3>
+                        <p data-i18n="srv_3_short">Wir sind an Ihrer Seite – für mehr Sicherheit, Entlastung und Lebensfreude.</p>
+                    </div>
+                </div>
+
+                <div class="service-overview-item" onclick="navigateTo('leistungen')" role="button" tabindex="0">
+                    <div class="service-icon-circle">
+                        <svg viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+                    </div>
+                    <div class="service-overview-text">
+                        <h3 data-i18n="srv_4_title">Vorsorge</h3>
+                        <p data-i18n="srv_4_short">Gemeinsam planen wir die Zukunft – damit Sie bestmöglich abgesichert sind.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3 Sütunlu Hakkımızda Bölümü (DÜZELTME: YENİ KIRMIZI GÜL GÖRSELİ) -->
+        <section class="editorial-about-section">
+            <div class="editorial-about-grid">
+                <div class="about-rose-card">
+                    <!-- KIRMIZI GÜL GÖRSELİ -->
+                    <img src="second-bg.jpg" alt="Rote Rose auf hellem Hintergrund">
+                    <div class="about-rose-caption">
+                        <span data-i18n="about_rose_quote">Mit Herz. Für Menschen.</span>
+                        <svg class="handwritten-underline" viewBox="0 0 100 8" fill="none">
+                            <path d="M2 6 Q 50 1, 98 4" stroke="#831A29" stroke-width="2.2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="about-center-col">
+                    <span class="eyebrow-text" data-i18n="about_eyebrow">WARUM KULTURSENSIBLE PFLEGEBERATUNG?</span>
+                    <h2 data-i18n="about_heading">Vertrauen, Erfahrung, Menschlichkeit</h2>
+                    <p data-i18n="about_body">
+                        Wir von Kultursensible Pflegeberatung und Alltagshilfe stehen für persönliche Betreuung, fachliche Kompetenz und ein respektvolles Miteinander. Unser Ziel ist es, Ihnen und Ihren Angehörigen den Alltag zu erleichtern und Lebensqualität zu erhalten.
+                    </p>
+                    <div>
+                        <button class="btn-burgundy" onclick="navigateTo('ueber-uns')">
+                            <span data-i18n="about_btn">Mehr über uns</span>
+                            <span aria-hidden="true">→</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="about-trust-panel">
+                    <div class="trust-item">
+                        <div class="trust-icon">
+                            <svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        </div>
+                        <div>
+                            <h4 data-i18n="trust_1_t">Kultursensible Betreuung</h4>
+                            <p data-i18n="trust_1_d">Wir respektieren Ihre Werte, Ihre Sprache und Ihre Gewohnheiten.</p>
+                        </div>
+                    </div>
+
+                    <div class="trust-item">
+                        <div class="trust-icon">
+                            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+                        </div>
+                        <div>
+                            <h4 data-i18n="trust_2_t">Zuverlässig &amp; Diskret</h4>
+                            <p data-i18n="trust_2_d">Ihre Anliegen sind bei uns in guten Händen.</p>
+                        </div>
+                    </div>
+
+                    <div class="trust-item">
+                        <div class="trust-icon">
+                            <svg viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+                        </div>
+                        <div>
+                            <h4 data-i18n="trust_3_t">Persönlich &amp; Nah</h4>
+                            <p data-i18n="trust_3_d">Wir nehmen uns Zeit – für Sie und Ihre Familie.</p>
+                        </div>
+                    </div>
+
+                    <svg class="botanical-rose-right" viewBox="0 0 200 200" fill="none" stroke="#D8A5A3" stroke-width="1.6">
+                        <circle cx="110" cy="110" r="46"/>
+                        <path d="M85 95 C 100 72, 132 72, 142 100 C 148 128, 115 145, 92 128"/>
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+        <!-- Alt İletişim Çağrı Bandı -->
+        <section class="cta-banner-section">
+            <div class="cta-banner-box">
+                <div class="cta-left-content">
+                    <div class="cta-text-wrap">
+                        <h2 data-i18n="cta_heading">Sie möchten mehr erfahren?</h2>
+                        <p data-i18n="cta_subtext">Wir beraten Sie gerne – unverbindlich und persönlich.</p>
+                    </div>
+                    <button class="btn-white-pill" onclick="navigateTo('kontakt')">
+                        <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                        <span data-i18n="cta_btn">Kontakt aufnehmen</span>
+                        <span aria-hidden="true">→</span>
+                    </button>
+                </div>
+                <div class="cta-right-photo">
+                    <img src="https://images.unsplash.com/photo-1581579438747-1dc8d17bbce4?auto=format&fit=crop&w=1000&q=85" alt="Pflegekraft hält fürsorglich die Hände einer älteren Person">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ==========================================
+         PAGE 2: LEISTUNGEN (HİZMETLERİMİZ)
+         ========================================== -->
+    <main id="page-leistungen" class="page-view">
+        <section class="subpage-header">
+            <div class="subpage-header-inner">
+                <span class="eyebrow-text" data-i18n="hero_eyebrow">VERTRAUEN · RESPEKT · MENSCHLICHKEIT</span>
+                <h1 data-i18n="page_srv_title">Unsere Leistungen im Überblick</h1>
+                <p data-i18n="page_srv_lead">
+                    Wir bieten Ihnen und Ihren Angehörigen maßgeschneiderte Beratung, praktische Alltagshilfe und einfühlsame Begleitung – abgestimmt auf Ihre persönlichen und kulturellen Bedürfnisse.
+                </p>
+            </div>
+        </section>
+
+        <section class="subpage-content">
+            <div class="detailed-services-grid">
+                <!-- 1. Beratung -->
+                <article class="detailed-service-card">
+                    <div class="dsc-image">
+                        <img src="beratung.jpg" alt="Persönliche Pflegeberatung zu Hause">
+                    </div>
+                    <div class="dsc-body">
+                        <div>
+                            <div class="dsc-header">
+                                <div class="service-icon-circle">
+                                    <svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                                </div>
+                                <h2 data-i18n="srv_1_title">Beratung</h2>
+                            </div>
+                            <p class="dsc-desc" data-i18n="srv_1_short">Individuelle und kompetente Beratung zu allen Fragen rund um Pflege und Alltag.</p>
+                            <ul class="dsc-list">
+                                <li data-i18n="dsc_1_1">Pflegegrad (Erstantrag, Höherstufung, Widerspruch)</li>
+                                <li data-i18n="dsc_1_2">Beratung zu Pflegegeld und Entlastungsbetrag</li>
+                                <li data-i18n="dsc_1_3">Schulungen und praktische Anleitung für pflegende Angehörige</li>
+                                <li data-i18n="dsc_1_4">Informationen zu Pflegehilfsmitteln (Rollator, Duschstuhl etc.)</li>
+                            </ul>
+                        </div>
+                        <button class="btn-burgundy" onclick="navigateTo('kontakt')" style="align-self: flex-start;">
+                            <span data-i18n="cta_btn">Kontakt aufnehmen</span> →
+                        </button>
+                    </div>
+                </article>
+
+                <!-- 2. Alltagshilfe -->
+                <article class="detailed-service-card">
+                    <div class="dsc-image">
+                        <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=800&q=80" alt="Unterstützung im Haushalt und Alltag">
+                    </div>
+                    <div class="dsc-body">
+                        <div>
+                            <div class="dsc-header">
+                                <div class="service-icon-circle">
+                                    <svg viewBox="0 0 24 24"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                                </div>
+                                <h2 data-i18n="srv_2_title">Alltagshilfe</h2>
+                            </div>
+                            <p class="dsc-desc" data-i18n="srv_2_short">Unterstützung im Haushalt, bei Einkäufen und im täglichen Leben.</p>
+                            <ul class="dsc-list">
+                                <li data-i18n="dsc_2_1">Reinigung von Zimmern, Küche und Bad sowie Müllentsorgung</li>
+                                <li data-i18n="dsc_2_2">Wäsche waschen, bügeln und Bettwäsche wechseln</li>
+                                <li data-i18n="dsc_2_3">Zubereitung von Mahlzeiten (Halal & Vegetarisch möglich)</li>
+                                <li data-i18n="dsc_2_4">Pflanzen gießen und kleine Gartenarbeiten</li>
+                            </ul>
+                        </div>
+                        <button class="btn-burgundy" onclick="navigateTo('kontakt')" style="align-self: flex-start;">
+                            <span data-i18n="cta_btn">Kontakt aufnehmen</span> →
+                        </button>
+                    </div>
+                </article>
+
+                <!-- 3. Begleitung (DÜZELTME: EŞLİK/REFAKAT RESMİ EKLENDİ) -->
+                <article class="detailed-service-card">
+                    <div class="dsc-image">
+                        <!-- YENİ REFAKAT/EŞLİK FOTOĞRAFI -->
+                        <img src="begleitung.jpg" alt="Einfühlsame Begleitung von Senioren im Alltag">
+                    </div>
+                    <div class="dsc-body">
+                        <div>
+                            <div class="dsc-header">
+                                <div class="service-icon-circle">
+                                    <svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                                </div>
+                                <h2 data-i18n="srv_3_title">Begleitung</h2>
+                            </div>
+                            <p class="dsc-desc" data-i18n="srv_3_short">Wir sind an Ihrer Seite – für mehr Sicherheit, Entlastung und Lebensfreude.</p>
+                            <ul class="dsc-list">
+                                <li data-i18n="dsc_3_1">Begleitung beim Einkaufen (Apotheke, Supermarkt)</li>
+                                <li data-i18n="dsc_3_2">Begleitung zu Arzt-, Therapie- und Krankenhausterminen</li>
+                                <li data-i18n="dsc_3_3">Gespräche führen, Bücher vorlesen und Alltagsplanung</li>
+                                <li data-i18n="dsc_3_4">Spürbare Entlastung für pflegende Angehörige</li>
+                            </ul>
+                        </div>
+                        <button class="btn-burgundy" onclick="navigateTo('kontakt')" style="align-self: flex-start;">
+                            <span data-i18n="cta_btn">Kontakt aufnehmen</span> →
+                        </button>
+                    </div>
+                </article>
+
+                <!-- 4. Vorsorge -->
+                <article class="detailed-service-card">
+                    <div class="dsc-image">
+                        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80" alt="Gemeinsame Planung und Vorsorge für Senioren">
+                    </div>
+                    <div class="dsc-body">
+                        <div>
+                            <div class="dsc-header">
+                                <div class="service-icon-circle">
+                                    <svg viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+                                </div>
+                                <h2 data-i18n="srv_4_title">Vorsorge</h2>
+                            </div>
+                            <p class="dsc-desc" data-i18n="srv_4_short">Gemeinsam planen wir die Zukunft – damit Sie bestmöglich abgesichert sind.</p>
+                            <ul class="dsc-list">
+                                <li data-i18n="dsc_4_1">Beratung zu geeigneten Pflegeoptionen (Verhinderungspflege, Tagespflege)</li>
+                                <li data-i18n="dsc_4_2">Organisation von Pflegehilfsmitteln für ein sicheres Wohnumfeld</li>
+                                <li data-i18n="dsc_4_3">Vertrauensvolle Abstimmung mit der gesamten Familie</li>
+                            </ul>
+                        </div>
+                        <button class="btn-burgundy" onclick="navigateTo('kontakt')" style="align-self: flex-start;">
+                            <span data-i18n="cta_btn">Kontakt aufnehmen</span> →
+                        </button>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <!-- ==========================================
+         PAGE 3: ÜBER UNS (HAKKIMIZDA - DÜZELTME: YENİ GÖRSEL)
+         ========================================== -->
+    <main id="page-ueber-uns" class="page-view">
+        <section class="subpage-header">
+            <div class="subpage-header-inner">
+                <span class="eyebrow-text" data-i18n="about_eyebrow">WARUM KULTURSENSIBLE PFLEGEBERATUNG?</span>
+                <h1 data-i18n="page_about_title">Über uns – Mit Herz. Für Menschen.</h1>
+                <p data-i18n="page_about_lead">
+                    Respekt, Vertrauen und kulturelles Verständnis bilden das Fundament unserer täglichen Arbeit für ältere Menschen und ihre Familien.
+                </p>
+            </div>
+        </section>
+
+        <section class="subpage-content">
+            <div class="about-page-story">
+                <div class="about-page-text">
+                    <span class="eyebrow-text" data-i18n="hero_eyebrow">VERTRAUEN · RESPEKT · MENSCHLICHKEIT</span>
+                    <h2 data-i18n="about_heading">Vertrauen, Erfahrung, Menschlichkeit</h2>
+                    <p data-i18n="about_body">
+                        Wir von Kultursensible Pflegeberatung und Alltagshilfe stehen für persönliche Betreuung, fachliche Kompetenz und ein respektvolles Miteinander. Unser Ziel ist es, Ihnen und Ihren Angehörigen den Alltag zu erleichtern und Lebensqualität zu erhalten.
+                    </p>
+                    <p data-i18n="page_about_p2">
+                        Jeder Mensch bringt eine eigene Lebensgeschichte, eigene Werte, Gewohnheiten und sprachliche Bedürfnisse mit. Gerade im Alter oder bei Pflegebedürftigkeit ist es besonders wichtig, sich verstanden, respektiert und geborgen zu fühlen.
+                    </p>
+                    <p data-i18n="page_about_p3">
+                        Wir nehmen uns Zeit für ein persönliches Gespräch auf Augenhöhe, hören Ihnen aufmerksam zu und entwickeln gemeinsam Lösungen, die genau zu Ihrer Lebenssituation passen.
+                    </p>
+                    <div style="margin-top: 1.8rem;">
+                        <button class="btn-burgundy" onclick="navigateTo('kontakt')">
+                            <span data-i18n="hero_btn">Jetzt Kontakt aufnehmen</span> →
+                        </button>
+                    </div>
+                </div>
+
+                <div class="about-page-image">
+                    <!-- YENİ DANIŞMANLIK/BAKIM GÖRSELİ -->
+                    <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=1000&q=80" alt="Vertrauensvolle und herzliche Seniorenbetreuung">
+                </div>
+            </div>
+
+            <div class="pillars-4-grid">
+                <div class="pillar-box">
+                    <div class="service-icon-circle">
+                        <svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </div>
+                    <div>
+                        <h3 data-i18n="trust_1_t">Kultursensible Betreuung</h3>
+                        <p data-i18n="trust_1_d">Wir respektieren Ihre Werte, Ihre Sprache und Ihre Gewohnheiten.</p>
+                    </div>
+                </div>
+
+                <div class="pillar-box">
+                    <div class="service-icon-circle">
+                        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+                    </div>
+                    <div>
+                        <h3 data-i18n="trust_2_t">Zuverlässig &amp; Diskret</h3>
+                        <p data-i18n="trust_2_d">Ihre Anliegen sind bei uns in guten Händen.</p>
+                    </div>
+                </div>
+
+                <div class="pillar-box">
+                    <div class="service-icon-circle">
+                        <svg viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+                    </div>
+                    <div>
+                        <h3 data-i18n="trust_3_t">Persönlich &amp; Nah</h3>
+                        <p data-i18n="trust_3_d">Wir nehmen uns Zeit – für Sie und Ihre Familie.</p>
+                    </div>
+                </div>
+
+                <div class="pillar-box">
+                    <div class="service-icon-circle">
+                        <svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                    </div>
+                    <div>
+                        <h3 data-i18n="about_val_4_t">Würde &amp; Selbstbestimmung</h3>
+                        <p data-i18n="about_val_4_d">Unser Ziel ist es, ein selbstbestimmtes Leben in vertrauter Umgebung zu fördern.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ==========================================
+         PAGE 4: KONTAKT (GERÇEK E-POSTA GÖNDERİMLİ FORM)
+         ========================================== -->
+    <main id="page-kontakt" class="page-view">
+        <section class="subpage-header">
+            <div class="subpage-header-inner">
+                <span class="eyebrow-text" data-i18n="hero_eyebrow">VERTRAUEN · RESPEKT · MENSCHLICHKEIT</span>
+                <h1 data-i18n="page_contact_title">Kontakt aufnehmen</h1>
+                <p data-i18n="page_contact_lead">
+                    Haben Sie Fragen zur Pflegeberatung oder wünschen Sie Unterstützung im Alltag? Schreiben Sie uns gerne eine E-Mail – wir freuen uns auf Ihre Nachricht.
+                </p>
+            </div>
+        </section>
+
+        <section class="subpage-content">
+            <div class="contact-page-grid">
+                <div class="contact-direct-card">
+                    <h2 data-i18n="contact_direct_title">Direkter Kontakt per E-Mail</h2>
+                    <p data-i18n="contact_direct_desc">
+                        Sie erreichen uns jederzeit direkt per E-Mail oder WhatsApp. Nutzen Sie gerne auch unser Kontaktformular.
+                    </p>
+
+                    <div style="display: flex; flex-direction: column; gap: 1rem; margin-bottom: 2rem;">
+                        <a href="mailto:info@kulturpflege-rose.de" class="email-highlight-box" style="margin-bottom: 0;">
+                            <div class="service-icon-circle">
+                                <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                            </div>
+                            <div>
+                                <span style="font-size: 0.8rem; color: var(--text-secondary);" data-i18n="contact_email_label">Offizielle E-Mail-Adresse</span>
+                                <strong>info@kulturpflege-rose.de</strong>
+                            </div>
+                        </a>
+
+                        <a href="https://wa.me/491785188399" target="_blank" rel="noopener" class="email-highlight-box" style="margin-bottom: 0;">
+                            <div class="service-icon-circle" style="background-color: #E8F9EE; color: var(--whatsapp);">
+                                <svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                            </div>
+                            <div>
+                                <span style="font-size: 0.8rem; color: var(--text-secondary);">WhatsApp Chat</span>
+                                <strong style="color: var(--whatsapp-dark);">0178 5188399</strong>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="contact-form-card">
+                    <h2 data-i18n="form_heading">Nachricht senden</h2>
+                    <p data-i18n="form_intro">
+                        Füllen Sie das Formular aus – Ihre Anfrage wird direkt an info@kulturpflege-rose.de übermittelt.
+                    </p>
+
+                    <div id="form-status" class="form-status-box" role="alert"></div>
+
+                    <!-- FORMSUBMIT AJAX BAĞLANTILI FORM (GERÇEKTEN ÇALIŞIR) -->
+                    <form id="contact-form" novalidate onsubmit="handleContactSubmit(event)">
+                        <div class="form-field">
+                            <label for="f-name" data-i18n="form_lbl_name">Name *</label>
+                            <input type="text" id="f-name" name="name" required>
+                            <div class="field-error" id="err-name" data-i18n="form_err_name">Bitte geben Sie Ihren Namen ein.</div>
+                        </div>
+
+                        <div class="form-field">
+                            <label for="f-email" data-i18n="form_lbl_email">E-Mail-Adresse *</label>
+                            <input type="email" id="f-email" name="email" required>
+                            <div class="field-error" id="err-email" data-i18n="form_err_email">Bitte geben Sie eine gültige E-Mail-Adresse ein.</div>
+                        </div>
+
+                        <div class="form-field">
+                            <label for="f-subject" data-i18n="form_lbl_subject">Betreff *</label>
+                            <input type="text" id="f-subject" name="_subject" required>
+                            <div class="field-error" id="err-subject" data-i18n="form_err_subject">Bitte geben Sie einen Betreff an.</div>
+                        </div>
+
+                        <div class="form-field">
+                            <label for="f-message" data-i18n="form_lbl_message">Ihre Nachricht *</label>
+                            <textarea id="f-message" name="message" rows="5" required></textarea>
+                            <div class="field-error" id="err-message" data-i18n="form_err_message">Bitte geben Sie Ihre Nachricht ein.</div>
+                        </div>
+
+                        <button type="submit" id="submit-btn" class="btn-burgundy" style="width: 100%; justify-content: center;">
+                            <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                            <span id="submit-btn-text" data-i18n="form_btn_submit">Nachricht absenden</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-top-row">
+                <a class="brand-identity" onclick="navigateTo('startseite')" href="#startseite">
+                    <img src="logo-rose.png" alt="Kultursensible Pflegeberatung und Alltagshilfe Rose Logo" class="brand-logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="brand-emblem-lockup" style="display:none;">
+                        <svg class="brand-emblem-svg" viewBox="0 0 120 125" fill="none">
+                            <path d="M32 98 A 50 50 0 1 1 88 98" stroke="#1A1A1A" stroke-width="2.3" stroke-linecap="round"/>
+                            <path d="M46 72 C 47 58, 50 48, 53 38" stroke="#3A4F28" stroke-width="2.2" stroke-linecap="round"/>
+                            <path d="M46 62 C 34 56, 30 43, 35 33 C 43 38, 47 48, 46 62 Z" fill="#4A5D32" stroke="#283618" stroke-width="1.2"/>
+                            <circle cx="53" cy="29" r="14" fill="#831A29"/>
+                            <path d="M43 26 C 46 18, 60 18, 63 26 C 66 34, 58 41, 53 41 C 46 41, 40 34, 43 26 Z" fill="#A51C24"/>
+                            <text x="45" y="71" font-family="'Cormorant Garamond', Georgia, serif" font-size="52" font-style="italic" font-weight="600" fill="#1A1A1A">K</text>
+                            <text x="60" y="116" text-anchor="middle" font-family="'Great Vibes', cursive" font-size="31" fill="#1A1A1A">Rose</text>
+                        </svg>
+                        <div class="brand-lockup-text">
+                            <span>KULTURSENSIBLE</span>
+                            <span>PFLEGEBERATUNG</span>
+                            <span>UND ALLTAGSHILFE</span>
+                        </div>
+                    </div>
+                </a>
+
+                <ul class="footer-nav-links">
+                    <li><button onclick="navigateTo('startseite')" data-i18n="nav_home">Startseite</button></li>
+                    <li><button onclick="navigateTo('leistungen')" data-i18n="nav_services">Leistungen</button></li>
+                    <li><button onclick="navigateTo('ueber-uns')" data-i18n="nav_about">Über uns</button></li>
+                    <li><button onclick="navigateTo('kontakt')" data-i18n="nav_contact">Kontakt</button></li>
+                </ul>
+
+                <a href="mailto:info@kulturpflege-rose.de" class="footer-email-cta">
+                    <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                    <div>
+                        <strong data-i18n="header_cta">E-Mail schreiben</strong>
+                        <span data-i18n="footer_email_sub">Wir freuen uns auf Ihre Nachricht.</span>
+                    </div>
+                </a>
+
+                <div class="lang-pill-select" role="group" aria-label="Sprachauswahl">
+                    <button class="lang-option-btn active" data-lang="de" onclick="switchLanguage('de')">
+                        <svg class="flag-circle" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#DD0000"/><path d="M0 0h24v8H0z" fill="#000"/><path d="M0 16h24v8H0z" fill="#FFCE00"/></svg>
+                        DE
+                    </button>
+                    <button class="lang-option-btn" data-lang="tr" onclick="switchLanguage('tr')">
+                        <svg class="flag-circle" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#E30A17"/><circle cx="10.5" cy="12" r="5" fill="#FFF"/><circle cx="11.8" cy="12" r="4" fill="#E30A17"/></svg>
+                        TR
+                    </button>
+                </div>
+            </div>
+
+            <div class="footer-bottom-row">
+                <div class="footer-legal-links">
+                    <span>&copy; 2026 Kultursensible Pflegeberatung und Alltagshilfe Rose</span>
+                    <span>|</span>
+                    <button onclick="openModal('datenschutz')" data-i18n="footer_privacy">Datenschutz</button>
+                    <span>|</span>
+                    <button onclick="openModal('impressum')" data-i18n="footer_imprint">Impressum</button>
+                </div>
+
+                <div class="footer-handwritten-quote" data-i18n="footer_quote">
+                    Gemeinsam. Für ein selbstbestimmtes Leben.
+                </div>
+            </div>
+        </div>
+
+        <svg class="botanical-footer-rose" viewBox="0 0 120 120" fill="none" stroke="#D8A5A3" stroke-width="1.4">
+            <circle cx="60" cy="60" r="35"/>
+            <path d="M45 50 C 55 35, 78 35, 82 55 C 85 75, 62 85, 48 72 C 38 60, 48 45, 62 45"/>
+        </svg>
+    </footer>
+
+    <!-- MODALS -->
+    <div id="modal-datenschutz" class="modal-backdrop" onclick="closeModalOnBackdrop(event, 'datenschutz')">
+        <div class="modal-box" role="dialog" aria-modal="true">
+            <button class="modal-close" onclick="closeModal('datenschutz')">×</button>
+            <h2 style="margin-bottom: 1rem;" data-i18n="footer_privacy">Datenschutz</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1rem;" data-i18n="modal_privacy_text">
+                Der Schutz Ihrer persönlichen Daten ist uns ein wichtiges Anliegen. Wenn Sie per E-Mail (info@kulturpflege-rose.de) oder über das Kontaktformular Kontakt mit uns aufnehmen, werden Ihre angegebenen Daten ausschließlich zum Zweck der Bearbeitung Ihrer Anfrage verwendet.
+            </p>
+            <p><strong>E-Mail:</strong> <a href="mailto:info@kulturpflege-rose.de" style="color: var(--burgundy);">info@kulturpflege-rose.de</a></p>
+        </div>
+    </div>
+
+    <div id="modal-impressum" class="modal-backdrop" onclick="closeModalOnBackdrop(event, 'impressum')">
+        <div class="modal-box" role="dialog" aria-modal="true">
+            <button class="modal-close" onclick="closeModal('impressum')">×</button>
+            <h2 style="margin-bottom: 1rem;" data-i18n="footer_imprint">Impressum</h2>
+            <p style="margin-bottom: 0.5rem;"><strong>Kultursensible Pflegeberatung und Alltagshilfe Rose</strong></p>
+            <p style="color: var(--text-secondary); margin-bottom: 1rem;" data-i18n="modal_imprint_text">
+                Offizieller E-Mail-Kontakt für alle Anfragen rund um Pflegeberatung und Alltagshilfe:
+            </p>
+            <p><strong>E-Mail:</strong> <a href="mailto:info@kulturpflege-rose.de" style="color: var(--burgundy);">info@kulturpflege-rose.de</a></p>
+        </div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script>
+        let currentLang = 'de';
+        let currentZoomPercent = 100;
+
+        const dictionary = {
+            de: {
+                nav_home: "Startseite",
+                nav_services: "Leistungen",
+                nav_about: "Über uns",
+                nav_contact: "Kontakt",
+                header_cta: "E-Mail schreiben",
+                hero_eyebrow: "VERTRAUEN · RESPEKT · MENSCHLICHKEIT",
+                hero_headline: "Kultursensible Pflegeberatung und Alltagshilfe",
+                hero_subtext: "Wir begleiten Sie und Ihre Angehörigen mit Herz, Erfahrung und persönlicher Beratung – für ein selbstbestimmtes Leben im Alltag.",
+                hero_btn: "Jetzt Kontakt aufnehmen",
+                hero_quote: "„Ein gutes Leben kennt kein Alter.“",
+                srv_1_title: "Beratung",
+                srv_1_short: "Individuelle und kompetente Beratung zu allen Fragen rund um Pflege und Alltag.",
+                srv_2_title: "Alltagshilfe",
+                srv_2_short: "Unterstützung im Haushalt, bei Einkäufen und im täglichen Leben.",
+                srv_3_title: "Begleitung",
+                srv_3_short: "Wir sind an Ihrer Seite – für mehr Sicherheit, Entlastung und Lebensfreude.",
+                srv_4_title: "Vorsorge",
+                srv_4_short: "Gemeinsam planen wir die Zukunft – damit Sie bestmöglich abgesichert sind.",
+                about_rose_quote: "Mit Herz. Für Menschen.",
+                about_eyebrow: "WARUM KULTURSENSIBLE PFLEGEBERATUNG?",
+                about_heading: "Vertrauen, Erfahrung, Menschlichkeit",
+                about_body: "Wir von Kultursensible Pflegeberatung und Alltagshilfe stehen für persönliche Betreuung, fachliche Kompetenz und ein respektvolles Miteinander. Unser Ziel ist es, Ihnen und Ihren Angehörigen den Alltag zu erleichtern und Lebensqualität zu erhalten.",
+                about_btn: "Mehr über uns",
+                trust_1_t: "Kultursensible Betreuung",
+                trust_1_d: "Wir respektieren Ihre Werte, Ihre Sprache und Ihre Gewohnheiten.",
+                trust_2_t: "Zuverlässig & Diskret",
+                trust_2_d: "Ihre Anliegen sind bei uns in guten Händen.",
+                trust_3_t: "Persönlich & Nah",
+                trust_3_d: "Wir nehmen uns Zeit – für Sie und Ihre Familie.",
+                cta_heading: "Sie möchten mehr erfahren?",
+                cta_subtext: "Wir beraten Sie gerne – unverbindlich und persönlich.",
+                cta_btn: "Kontakt aufnehmen",
+                page_srv_title: "Unsere Leistungen im Überblick",
+                page_srv_lead: "Wir bieten Ihnen und Ihren Angehörigen maßgeschneiderte Beratung, praktische Alltagshilfe und einfühlsame Begleitung – abgestimmt auf Ihre persönlichen und kulturellen Bedürfnisse.",
+                dsc_1_1: "Pflegegrad (Erstantrag, Höherstufung, Widerspruch)",
+                dsc_1_2: "Beratung zu Pflegegeld und Entlastungsbetrag",
+                dsc_1_3: "Schulungen und praktische Anleitung für pflegende Angehörige",
+                dsc_1_4: "Informationen zu Pflegehilfsmitteln (Rollator, Duschstuhl etc.)",
+                dsc_2_1: "Reinigung von Zimmern, Küche und Bad sowie Müllentsorgung",
+                dsc_2_2: "Wäsche waschen, bügeln und Bettwäsche wechseln",
+                dsc_2_3: "Zubereitung von Mahlzeiten (Halal & Vegetarisch möglich)",
+                dsc_2_4: "Pflanzen gießen und kleine Gartenarbeiten",
+                dsc_3_1: "Begleitung beim Einkaufen (Apotheke, Supermarkt)",
+                dsc_3_2: "Begleitung zu Arzt-, Therapie- und Krankenhausterminen",
+                dsc_3_3: "Gespräche führen, Bücher vorlesen und Alltagsplanung",
+                dsc_3_4: "Spürbare Entlastung für pflegende Angehörige",
+                dsc_4_1: "Beratung zu geeigneten Pflegeoptionen (Verhinderungspflege, Tagespflege)",
+                dsc_4_2: "Organisation von Pflegehilfsmitteln für ein sicheres Wohnumfeld",
+                dsc_4_3: "Vertrauensvolle Abstimmung mit der gesamten Familie",
+                page_about_title: "Über uns – Mit Herz. Für Menschen.",
+                page_about_lead: "Respekt, Vertrauen und kulturelles Verständnis bilden das Fundament unserer täglichen Arbeit für ältere Menschen und ihre Familien.",
+                page_about_p2: "Jeder Mensch bringt eine eigene Lebensgeschichte, eigene Werte, Gewohnheiten und sprachliche Bedürfnisse mit. Gerade im Alter oder bei Pflegebedürftigkeit ist es besonders wichtig, sich verstanden, respektiert und geborgen zu fühlen.",
+                page_about_p3: "Wir nehmen uns Zeit für ein persönliches Gespräch auf Augenhöhe, hören Ihnen aufmerksam zu und entwickeln gemeinsam Lösungen, die genau zu Ihrer Lebenssituation passen.",
+                about_val_4_t: "Würde & Selbstbestimmung",
+                about_val_4_d: "Unser Ziel ist es, ein selbstbestimmtes Leben in vertrauter Umgebung zu fördern.",
+                page_contact_title: "Kontakt aufnehmen",
+                page_contact_lead: "Haben Sie Fragen zur Pflegeberatung oder wünschen Sie Unterstützung im Alltag? Schreiben Sie uns gerne eine E-Mail – wir freuen uns auf Ihre Nachricht.",
+                contact_direct_title: "Direkter Kontakt per E-Mail",
+                contact_direct_desc: "Sie erreichen uns jederzeit direkt per E-Mail oder WhatsApp. Nutzen Sie gerne auch unser Kontaktformular.",
+                contact_email_label: "Offizielle E-Mail-Adresse",
+                form_heading: "Nachricht senden",
+                form_intro: "Füllen Sie das Formular aus – Ihre Anfrage wird direkt an info@kulturpflege-rose.de übermittelt.",
+                form_lbl_name: "Name *",
+                form_lbl_email: "E-Mail-Adresse *",
+                form_lbl_subject: "Betreff *",
+                form_lbl_message: "Ihre Nachricht *",
+                form_err_name: "Bitte geben Sie Ihren Namen ein.",
+                form_err_email: "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+                form_err_subject: "Bitte geben Sie einen Betreff an.",
+                form_err_message: "Bitte geben Sie Ihre Nachricht ein.",
+                form_btn_submit: "Nachricht absenden",
+                form_sending: "Wird gesendet...",
+                form_success_msg: "Vielen Dank! Ihre Nachricht wurde erfolgreich an info@kulturpflege-rose.de gesendet.",
+                form_error_msg: "Bitte überprüfen Sie die rot markierten Pflichtfelder.",
+                footer_email_sub: "Wir freuen uns auf Ihre Nachricht.",
+                footer_privacy: "Datenschutz",
+                footer_imprint: "Impressum",
+                footer_quote: "Gemeinsam. Für ein selbstbestimmtes Leben.",
+                modal_privacy_text: "Der Schutz Ihrer persönlichen Daten ist uns ein wichtiges Anliegen. Wenn Sie per E-Mail (info@kulturpflege-rose.de) oder über das Kontaktformular Kontakt mit uns aufnehmen, werden Ihre angegebenen Daten ausschließlich zum Zweck der Bearbeitung Ihrer Anfrage verwendet.",
+                modal_imprint_text: "Offizieller E-Mail-Kontakt für alle Anfragen rund um Pflegeberatung und Alltagshilfe:",
+                fab_email: "E-Mail senden",
+                fab_wa: "WhatsApp Chat"
+            },
+            tr: {
+                nav_home: "Ana Sayfa",
+                nav_services: "Hizmetlerimiz",
+                nav_about: "Hakkımızda",
+                nav_contact: "İletişim",
+                header_cta: "E-Posta Gönder",
+                hero_eyebrow: "GÜVEN · SAYGI · İNSANİ DEĞERLER",
+                hero_headline: "Kültüre Duyarlı Bakım Danışmanlığı ve Günlük Yaşam Desteği",
+                hero_subtext: "Sizi ve yakınlarınızı sevgi, deneyim ve bireysel danışmanlıkla destekliyoruz – günlük yaşamda bağımsız ve huzurlu bir hayat için yanınızdayız.",
+                hero_btn: "Şimdi İletişime Geçin",
+                hero_quote: "“İyi bir yaşamın yaşı yoktur.”",
+                srv_1_title: "Danışmanlık",
+                srv_1_short: "Bakım süreçleri ve günlük yaşamla ilgili tüm sorularınız için bireysel ve uzman danışmanlık.",
+                srv_2_title: "Günlük Yaşam Desteği",
+                srv_2_short: "Ev işlerinde, alışverişlerde ve günlük yaşam rutinlerinde güvenilir destek.",
+                srv_3_title: "Refakat ve Eşlik",
+                srv_3_short: "Daha fazla güven, huzur ve yaşam sevinci için her zaman yanınızdayız.",
+                srv_4_title: "Gelecek Planlaması",
+                srv_4_short: "En iyi şekilde güvence altında olmanız için geleceği birlikte planlıyoruz.",
+                about_rose_quote: "Gönülden. İnsanlar İçin.",
+                about_eyebrow: "NEDEN KÜLTÜRE DUYARLI BAKIM DANIŞMANLIĞI?",
+                about_heading: "Güven, Deneyim, İnsani Yaklaşım",
+                about_body: "Kultursensible Pflegeberatung und Alltagshilfe Rose olarak bireysel ilgi, mesleki uzmanlık ve karşılıklı saygıyı temsil ediyoruz. Amacımız, sizin ve aile yakınlarınızın günlük yaşamını kolaylaştırmak ve yaşam kalitenizi korumaktır.",
+                about_btn: "Hakkımızda Daha Fazla Bilgi",
+                trust_1_t: "Kültüre Duyarlı Yaklaşım",
+                trust_1_d: "Değerlerinize, dilinize ve yaşam alışkanlıklarınıza saygı duyuyoruz.",
+                trust_2_t: "Güvenilir ve Özenli",
+                trust_2_d: "Tüm talepleriniz ve ihtiyaçlarınız bizimle emin ellerde.",
+                trust_3_t: "Bireysel ve Samimi",
+                trust_3_d: "Sizin ve aileniz için gereken zamanı özenle ayırıyoruz.",
+                cta_heading: "Daha fazla bilgi almak ister misiniz?",
+                cta_subtext: "Size memnuniyetle, bağlayıcı olmadan ve bireysel olarak danışmanlık sunuyoruz.",
+                cta_btn: "İletişime Geçin",
+                page_srv_title: "Hizmetlerimize Genel Bakış",
+                page_srv_lead: "Size ve yakınlarınıza kişisel ve kültürel ihtiyaçlarınıza göre uyarlanmış bireysel danışmanlık, pratik günlük yaşam desteği ve şefkatli refakat sunuyoruz.",
+                dsc_1_1: "Bakım Derecesi (İlk başvuru, yükseltme ve itiraz)",
+                dsc_1_2: "Bakım parası ve Entlastungsbetrag danışmanlığı",
+                dsc_1_3: "Bakım veren aile yakınlarına yönelik eğitimler",
+                dsc_1_4: "Yardımcı bakım araçları (Rollator, duş sandalyesi vb.) hakkında bilgi",
+                dsc_2_1: "Odaların, mutfak ve banyonun temizliği, çöplerin atılması",
+                dsc_2_2: "Çamaşır yıkama, ütüleme ve nevresim değiştirme",
+                dsc_2_3: "Yemek hazırlığı (Helal ve vejetaryen seçeneklerle)",
+                dsc_2_4: "Bitki sulama ve küçük bahçe işleri",
+                dsc_3_1: "Alışveriş, eczane ve market işlerinde eşlik",
+                dsc_3_2: "Doktor, terapi ve hastane randevularına refakat",
+                dsc_3_3: "Sohbet etme, kitap okuma ve günlük işleri planlama",
+                dsc_3_4: "Bakım veren aile bireyleri için hissedilir rahatlama",
+                dsc_4_1: "Geçici bakım (Verhinderungspflege) ve uygun bakım seçenekleri planlaması",
+                dsc_4_2: "Güvenli ev ortamı için ihtiyaç duyulan araçların organizasyonu",
+                dsc_4_3: "Uzun vadeli güvence için ailenin tamamıyla uyumlu bir koordinasyon",
+                page_about_title: "Hakkımızda – Gönülden. İnsanlar İçin.",
+                page_about_lead: "Saygı, güven ve kültürel anlayış; yaşlı bireyler ve aileleri için yürüttüğümüz günlük çalışmalarımızın temelini oluşturur.",
+                page_about_p2: "Her insan kendi yaşam öyküsünü, değerlerini, alışkanlıklarını ve dil ihtiyaçlarını beraberinde taşır. Özellikle ileri yaşlarda veya bakım ihtiyacı oluştuğunda anlaşıldığını, saygı gördüğünü ve güvende olduğunu hissetmek büyük önem taşır.",
+                page_about_p3: "Sizinle samimi ve birebir görüşmeler için zaman ayırıyor, sizi dikkatle dinliyor ve yaşam durumunuza en uygun çözümleri birlikte geliştiriyoruz.",
+                about_val_4_t: "Saygınlık ve Kendi Kararını Verme",
+                about_val_4_d: "Amacımız, alışık olduğunuz ev ortamında bağımsız ve huzurlu bir yaşamı desteklemektir.",
+                page_contact_title: "İletişime Geçin",
+                page_contact_lead: "Bakım danışmanlığı hakkında sorularınız mı var veya günlük yaşamda desteğe mi ihtiyacınız var? Bize e-posta gönderebilirsiniz – mesajınızı memnuniyetle bekliyoruz.",
+                contact_direct_title: "E-Posta ile Doğrudan İletişim",
+                contact_direct_desc: "Bize istediğiniz zaman doğrudan e-posta veya WhatsApp yoluyla ulaşabilir veya sağdaki iletişim formunu kullanabilirsiniz.",
+                contact_email_label: "Resmi E-Posta Adresi",
+                form_heading: "Mesaj Gönderin",
+                form_intro: "Formu doldurup gönderdiğinizde mesajınız doğrudan info@kulturpflege-rose.de adresine iletilir.",
+                form_lbl_name: "Adınız ve Soyadınız *",
+                form_lbl_email: "E-Posta Adresiniz *",
+                form_lbl_subject: "Konu *",
+                form_lbl_message: "Mesajınız *",
+                form_err_name: "Lütfen adınızı ve soyadınızı girin.",
+                form_err_email: "Lütfen geçerli bir e-posta adresi girin.",
+                form_err_subject: "Lütfen bir konu belirtin.",
+                form_err_message: "Lütfen mesajınızı yazın.",
+                form_btn_submit: "Mesajı Gönder",
+                form_sending: "Gönderiliyor...",
+                form_success_msg: "Teşekkürler! Mesajınız başarıyla info@kulturpflege-rose.de adresine gönderildi.",
+                form_error_msg: "Lütfen kırmızı ile işaretlenmiş zorunlu alanları kontrol edin.",
+                footer_email_sub: "Mesajınızı memnuniyetle bekliyoruz.",
+                footer_privacy: "Veri Koruma (Datenschutz)",
+                footer_imprint: "Künye (Impressum)",
+                footer_quote: "Birlikte. Kendi kararınızı verdiğiniz bir yaşam için.",
+                modal_privacy_text: "Kişisel verilerinizin korunması bizim için çok önemlidir. Bizimle e-posta (info@kulturpflege-rose.de) veya iletişim formu üzerinden iletişime geçtiğinizde, paylaştığınız bilgiler yalnızca talebinizi yanıtlamak amacıyla kullanılır.",
+                modal_imprint_text: "Bakım danışmanlığı ve günlük yaşam desteğiyle ilgili tüm talepleriniz için resmi e-posta iletişimimiz:",
+                fab_email: "E-Posta Gönder",
+                fab_wa: "WhatsApp'tan Yazın"
+            }
+        };
+
+        function navigateTo(pageId) {
+            document.querySelectorAll('.page-view').forEach(p => p.classList.remove('active'));
+            const target = document.getElementById('page-' + pageId);
+            if (target) target.classList.add('active');
+
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.toggle('active', link.getAttribute('data-page') === pageId);
+            });
+
+            document.getElementById('main-nav').classList.remove('open');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function toggleMobileNav() {
+            document.getElementById('main-nav').classList.toggle('open');
+        }
+
+        function switchLanguage(lang) {
+            currentLang = lang;
+            document.documentElement.lang = lang;
+
+            document.querySelectorAll('.lang-option-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+            });
+
+            const t = dictionary[lang];
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (t[key]) el.textContent = t[key];
+            });
+
+            const statusBox = document.getElementById('form-status');
+            if (statusBox) {
+                statusBox.className = 'form-status-box';
+                statusBox.textContent = '';
+            }
+        }
+
+        function adjustZoom(direction) {
+            currentZoomPercent = Math.min(Math.max(currentZoomPercent + direction * 10, 90), 130);
+            const newPx = (16 * currentZoomPercent) / 100;
+            document.documentElement.style.setProperty('--root-font-size', newPx + 'px');
+            document.getElementById('zoom-indicator').textContent = currentZoomPercent + '%';
+        }
+
+        // GERÇEK E-POSTA GÖNDERİMİ (FormSubmit API)
+        async function handleContactSubmit(e) {
+            e.preventDefault();
+            const t = dictionary[currentLang];
+            const nameInput = document.getElementById('f-name');
+            const emailInput = document.getElementById('f-email');
+            const subjectInput = document.getElementById('f-subject');
+            const messageInput = document.getElementById('f-message');
+            const statusBox = document.getElementById('form-status');
+            const submitBtn = document.getElementById('submit-btn');
+            const submitBtnText = document.getElementById('submit-btn-text');
+
+            let valid = true;
+            const validateField = (input, errId, condition) => {
+                const errEl = document.getElementById(errId);
+                if (!condition) {
+                    input.classList.add('invalid');
+                    errEl.style.display = 'block';
+                    valid = false;
+                } else {
+                    input.classList.remove('invalid');
+                    errEl.style.display = 'none';
+                }
+            };
+
+            validateField(nameInput, 'err-name', nameInput.value.trim().length >= 2);
+            validateField(emailInput, 'err-email', /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value.trim()));
+            validateField(subjectInput, 'err-subject', subjectInput.value.trim().length >= 2);
+            validateField(messageInput, 'err-message', messageInput.value.trim().length >= 5);
+
+            if (!valid) {
+                statusBox.className = 'form-status-box error';
+                statusBox.textContent = t.form_error_msg;
+                return;
+            }
+
+            submitBtn.disabled = true;
+            submitBtnText.textContent = t.form_sending;
+
+            try {
+                // FormSubmit ile arka planda gerçek gönderim
+                const response = await fetch("https://formsubmit.co/ajax/info@kulturpflege-rose.de", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Accept": "application/json"
+                    },
+                    body: JSON.stringify({
+                        name: nameInput.value.trim(),
+                        email: emailInput.value.trim(),
+                        _subject: subjectInput.value.trim(),
+                        message: messageInput.value.trim()
+                    })
+                });
+
+                if (response.ok) {
+                    statusBox.className = 'form-status-box success';
+                    statusBox.textContent = t.form_success_msg;
+                    document.getElementById('contact-form').reset();
+                } else {
+                    throw new Error("API Hatası");
+                }
+            } catch (err) {
+                // Eğer sunucuya erişilemezse (Örn: Güvenlik duvarı engeli) varsayılan mail uygulamasını açar
+                const mailtoSubject = encodeURIComponent(subjectInput.value.trim());
+                const mailtoBody = encodeURIComponent(
+                    `Name: ${nameInput.value.trim()}\nE-Mail: ${emailInput.value.trim()}\n\nNachricht:\n${messageInput.value.trim()}`
+                );
+                window.location.href = `mailto:info@kulturpflege-rose.de?subject=${mailtoSubject}&body=${mailtoBody}`;
+                statusBox.className = 'form-status-box success';
+                statusBox.textContent = t.form_success_msg;
+            } finally {
+                submitBtn.disabled = false;
+                submitBtnText.textContent = t.form_btn_submit;
+            }
+        }
+
+        function openModal(id) { document.getElementById('modal-' + id).classList.add('open'); }
+        function closeModal(id) { document.getElementById('modal-' + id).classList.remove('open'); }
+        function closeModalOnBackdrop(e, id) { if (e.target.id === 'modal-' + id) closeModal(id); }
+    </script>
+</body>
+</html>
